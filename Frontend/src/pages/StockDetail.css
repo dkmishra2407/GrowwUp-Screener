@@ -1,0 +1,142 @@
+.stock-detail-page .stock-hero {
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.stock-hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stock-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.stock-name {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stock-about {
+  margin: 1.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 900px;
+}
+
+.source-link {
+  text-decoration: none;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-toggle .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  position: sticky;
+  top: 0.75rem;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(17, 24, 39, 0.92);
+}
+
+.tab-btn {
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.tab-btn:hover {
+  color: var(--text);
+  background: var(--bg-hover);
+}
+
+.tab-btn.active {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-anchor {
+  scroll-margin-top: 5rem;
+}
+
+.highlights {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.highlight-metric {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.highlight-values {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .stock-detail-page .stock-hero {
+    padding: 1.25rem;
+  }
+
+  .tab-nav {
+    top: 0;
+    border-radius: 0;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

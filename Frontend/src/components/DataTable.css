@@ -1,0 +1,85 @@
+.data-table-section {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.data-table-title {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.empty-message {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.65rem 0.85rem;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: var(--bg-elevated);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.data-table tbody tr:hover td {
+  background: rgba(34, 211, 165, 0.04);
+}
+
+.sticky-col {
+  text-align: left !important;
+  position: sticky;
+  left: 0;
+  background: var(--bg-card);
+  z-index: 2;
+  min-width: 180px;
+  max-width: 260px;
+  white-space: normal;
+}
+
+.data-table thead .sticky-col {
+  background: var(--bg-elevated);
+  z-index: 3;
+}
+
+.metric-cell {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.value-cell {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
