@@ -1,6 +1,10 @@
 import requests
+import certifi
 from bs4 import BeautifulSoup
 import pandas as pd
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 HEADERS = {
     "User-Agent": (
@@ -44,7 +48,11 @@ def df_to_table(df: pd.DataFrame | None) -> dict:
 
 
 def fetch_page(url: str) -> tuple[BeautifulSoup, str]:
-    resp = requests.get(url, headers=HEADERS, timeout=20)
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=20, verify=certifi.where())
+    except requests.exceptions.SSLError:
+        # Fallback for environments with incomplete CA bundles (common on some Windows setups)
+        resp = requests.get(url, headers=HEADERS, timeout=20, verify=False)
     resp.raise_for_status()
     return BeautifulSoup(resp.text, "lxml"), resp.url
 
